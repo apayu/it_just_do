@@ -1,58 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Index</title>
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
-  </head>
-  <body class="c-app">
-    <div class="c-wrapper">
-      <header class="c-header c-header-light c-header-fixed">
-      </header>
-      <div class="c-body">
-        <main class="c-main">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-sm-6 col-lg-3">
-                <div class="card">
-                  <div class="card-header">
-                    編輯任務
-                  </div>
-                  <div class="card-body">
-                    <form class="edit_task" id="edit_task_1">
-                      <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="task_name">名稱</label>
-                        <div class="col-sm-10">
-                          <input class="form-control" type="text" value="1" name="task[name]" id="task_name">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="task_content">內容</label>
-                        <div class="col-sm-10">
-                          <input class="form-control" type="text" value="好任務" name="task[content]" id="task_content">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-6">
-                          <input type="submit" name="commit" value="送出" class="btn btn-primary" data-disable-with="送出">
-                        </div>
-                        <div class="col-6 text-right">
-                          <a href="/tasks">返回</a>
-                        </div>
-                      </div>
-                    </form><div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        任務細節
       </div>
-    </div><!-- Optional JavaScript -->
-    <!-- Popper.js first, then CoreUI JS -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
-  </body>
-</html>
+      <div class="card-body">
+        <div class="row">
+          <div class="col"><%= @user_agent %></div>
+        </div>
+        <div class="row">
+          <label class="col">任務名稱</label>
+          <div class="col">
+             <%= @task['title']  %>
+          </div>
+        </div>
+        <div class="row">
+          <label class="col">任務內容</label>
+          <div class="col">
+            <%= @task['content']  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
