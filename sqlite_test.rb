@@ -1,14 +1,20 @@
-require 'sqlite3'
+# require 'sqlite3'
 require 'mavericks/data_record'
 require 'mavericks/sqlite_model'
 
-Mavericks::DataRecord::Base.establish_connection(
-  adapter: 'postgresql',
-  database: 'my_db'
-)
+Mavericks::DataRecord::Base.establish_connection
 
-class Task < Mavericks::Model::SQLite
+class Task < Mavericks::DataRecord::Base
 end
+
+puts Task.schema
+
+
+# user =  Task.new(name: 'abc')
+# puts user.name
+
+# class Task < Mavericks::Model::SQLite
+# end
 
 # class Task < Mavericks::Model::SQLite
 #   Task.schema.keys.each do |attr|

@@ -1,0 +1,4 @@
+default:
+  adapter: postgresql
+development:
+  database: just_do
