@@ -8,6 +8,10 @@ class Task < Mavericks::DataRecord::Base
 end
 
 puts Task.schema
+task = Task.new(title: '鐵人30')
+puts task.title
+task.title = '鐵人40'
+puts task.title
 
 
 # user =  Task.new(name: 'abc')
