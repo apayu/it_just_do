@@ -1,6 +1,6 @@
 # require 'sqlite3'
 require 'mavericks/data_record'
-require 'mavericks/sqlite_model'
+# require 'mavericks/sqlite_model'
 
 Mavericks::DataRecord::Base.establish_connection
 
@@ -8,10 +8,14 @@ class Task < Mavericks::DataRecord::Base
 end
 
 # puts Task.schema
-# task = Task.new(titl: '鐵人30', content: '123')
+# task = Task.new(title: '鐵人30', content: '456')
 # task.save
 # puts Task.all.last.title
-puts Task.find(1).title
+Task.where(title: '鐵人30').each do |task|
+  puts task.title
+  puts task.content
+end
+# puts Task.where(id: 1, content: '456').first.content
 # puts Task.count
 # task.save
 # puts Task.count

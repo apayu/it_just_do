@@ -2,7 +2,8 @@ require 'byebug'
 
 class TasksController < Mavericks::Controller
   def index
-    @tasks = FileModel.all
+    byebug
+    @tasks = Task.all
   end
 
   def show

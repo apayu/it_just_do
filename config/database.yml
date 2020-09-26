@@ -2,3 +2,8 @@ default:
   adapter: postgresql
 development:
   database: just_do
+
+# default:
+#   adapter: sqlite
+# development:
+#   database: just_do
